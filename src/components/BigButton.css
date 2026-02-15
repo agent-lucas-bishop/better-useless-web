@@ -1,0 +1,68 @@
+.big-button {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff);
+  background-size: 300% 300%;
+  animation: gradient-spin 3s ease infinite;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  transition: transform 0.1s ease;
+  box-shadow: 0 8px 0 #000, 0 12px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.big-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 0 #000, 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.big-button:active,
+.big-button.squished {
+  transform: scale(0.88) rotate(-3deg);
+  box-shadow: 0 2px 0 #000, 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.08s ease;
+}
+
+.button-text {
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+.button-emoji {
+  font-size: 2.5rem;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes gradient-spin {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (max-width: 600px) {
+  .big-button {
+    width: 220px;
+    height: 220px;
+    font-size: 1.4rem;
+  }
+  .button-emoji { font-size: 2rem; }
+}
